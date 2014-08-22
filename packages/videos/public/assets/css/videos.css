@@ -1,0 +1,71 @@
+.search-box {
+  width: 100%;
+  border: 0;
+  outline-width: 0;
+  font-size: 20px;
+  padding: 0;
+}
+.search-box:focus {
+  border: 0;
+  outline-width: 0;
+}
+
+.ordinal-number {
+  vertical-align: super;
+  font-size: 0.75em;
+}
+
+.first-video {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+.first-video:before {
+    content: "";
+    display: block;
+    margin-top: 56.25%;
+}
+.yt-iframe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: silver;
+}
+.first-video iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.sort-by {
+  padding: 5px 10px 5px 0;
+}
+
+.nav-pills > li > a {
+  padding: 5px 10px;
+}
+
+.vl-video-info-wrap {
+  margin-top: 20px;
+}
+
+.vl-video-info-wrap h5 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.vl-video-info-wrap .small {
+  margin-bottom: 5px;
+}
+
+.vl-thumb-clip img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+  .sort-by {
+    display: none;
+  }
+}

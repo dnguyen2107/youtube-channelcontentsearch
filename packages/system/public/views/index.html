@@ -1,0 +1,174 @@
+<!-- <div class="row">
+  <div class="col-sm-12">
+    <h1 id="type">Videos Search</h1>
+    <form role="form">
+      <div class="form-group">
+        <input type="text" class="form-control input-lg" placeholder="Type to search">
+      </div>
+    </form>
+  </div>
+</div> -->
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="dropdown">
+      <button class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" id="video-sort-by" aria-haspopup="true" aria-expanded="false">Sort By <span class="caret"></span></button>
+      <ul class="dropdown-menu" aria-labelledby="video-sort-by">
+        <li><a href="#">Relevance</a></li>
+        <li><a href="#">Uploaded Date</a></li>
+        <li><a href="#">Views</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="page-header">
+        <h1 id="type">Typography</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Headings -->
+
+  <div class="VideoList">
+    <div class="row vl-video-info-wrap">
+      <div class="col-sm-3 col-md-2">
+        <a class="vl-thumb-clip" data-ng-click="openVideo(video.snippet.resourceId.videoId)"><img data-ng-src="https://i.ytimg.com/s_vi/N7bN3rJy7hM/mqdefault.jpg?sqp=CNiMgZ8F&amp;rs=AOn4CLD7cFneRQ9W5yi_uNczqA1sDJRnbA&amp;t=1407207195775" src="https://i.ytimg.com/s_vi/N7bN3rJy7hM/mqdefault.jpg?sqp=CNiMgZ8F&amp;rs=AOn4CLD7cFneRQ9W5yi_uNczqA1sDJRnbA&amp;t=1407207195775"></a>
+      </div>
+      <div class="col-sm-9 col-md-10">
+        <h4><a data-ng-href="#">232  mom noi dau phai nghi</a></h4>
+        <div class="small text-muted">
+          <span>by </span><a class="vl-video-channel" data-ng-click="openVideo(video.snippet.resourceId.videoId)">MrTenDep</a><span class="vl-video-views">999,000,000 views</span>
+        </div>
+        <div class="small text-muted">
+          <span class="localized-date ng-binding">August 4th, 2014 2:30 PM</span>
+        </div>
+        <div>
+          <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row vl-video-info-wrap">
+      <div class="col-sm-3 col-md-2">
+        <a class="vl-thumb-clip" data-ng-click="openVideo(video.snippet.resourceId.videoId)"><img data-ng-src="https://i.ytimg.com/s_vi/N7bN3rJy7hM/mqdefault.jpg?sqp=CNiMgZ8F&amp;rs=AOn4CLD7cFneRQ9W5yi_uNczqA1sDJRnbA&amp;t=1407207195775" src="https://i.ytimg.com/s_vi/N7bN3rJy7hM/mqdefault.jpg?sqp=CNiMgZ8F&amp;rs=AOn4CLD7cFneRQ9W5yi_uNczqA1sDJRnbA&amp;t=1407207195775"></a>
+      </div>
+      <div class="col-sm-9 col-md-10">
+        <h4><a data-ng-href="#">232  mom noi dau phai nghi</a></h4>
+        <div class="small text-muted">
+          <span>by </span><a class="vl-video-title ng-binding" data-ng-click="openVideo(video.snippet.resourceId.videoId)">MrTenDep</a><span style="padding-left:20px">999,000,000 views</span>
+        </div>
+        <div class="small text-muted">
+          <span class="localized-date ng-binding">August 4th, 2014 2:30 PM</span>
+        </div>
+        <div>
+          <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row vl-video-info-wrap">
+      <div class="col-sm-3 col-md-2">
+        <a class="vl-thumb-clip" data-ng-click="openVideo(video.snippet.resourceId.videoId)"><img data-ng-src="https://i.ytimg.com/s_vi/N7bN3rJy7hM/mqdefault.jpg?sqp=CNiMgZ8F&amp;rs=AOn4CLD7cFneRQ9W5yi_uNczqA1sDJRnbA&amp;t=1407207195775" src="https://i.ytimg.com/s_vi/N7bN3rJy7hM/mqdefault.jpg?sqp=CNiMgZ8F&amp;rs=AOn4CLD7cFneRQ9W5yi_uNczqA1sDJRnbA&amp;t=1407207195775"></a>
+      </div>
+      <div class="col-sm-9 col-md-10">
+        <h4><a data-ng-href="#">232  mom noi dau phai nghi</a></h4>
+        <div class="small text-muted">
+          <span>by </span><a class="vl-video-title ng-binding" data-ng-click="openVideo(video.snippet.resourceId.videoId)">MrTenDep</a><span style="padding-left:20px">999,000,000 views</span>
+        </div>
+        <div class="small text-muted">
+          <span class="localized-date ng-binding">August 4th, 2014 2:30 PM</span>
+        </div>
+        <div>
+          <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row vl-video-info-wrap">
+      <div class="col-sm-3 col-md-2">
+        <a class="vl-thumb-clip" data-ng-click="openVideo(video.snippet.resourceId.videoId)"><img data-ng-src="https://i.ytimg.com/s_vi/N7bN3rJy7hM/mqdefault.jpg?sqp=CNiMgZ8F&amp;rs=AOn4CLD7cFneRQ9W5yi_uNczqA1sDJRnbA&amp;t=1407207195775" src="https://i.ytimg.com/s_vi/N7bN3rJy7hM/mqdefault.jpg?sqp=CNiMgZ8F&amp;rs=AOn4CLD7cFneRQ9W5yi_uNczqA1sDJRnbA&amp;t=1407207195775"></a>
+      </div>
+      <div class="col-sm-9 col-md-10">
+        <h4><a data-ng-href="#">232  mom noi dau phai nghi</a></h4>
+        <div class="small text-muted">
+          <span>by </span><a class="vl-video-title ng-binding" data-ng-click="openVideo(video.snippet.resourceId.videoId)">MrTenDep</a><span style="padding-left:20px">999,000,000 views</span>
+        </div>
+        <div class="small text-muted">
+          <span class="localized-date ng-binding">August 4th, 2014 2:30 PM</span>
+        </div>
+        <div>
+          <span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="bs-component">
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+        <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+      <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div></div>
+    </div>
+    <div class="col-sm-4">
+      <div class="bs-component">
+        <h2>Example body text</h2>
+        <p>Nullam quis risus eget <a href="#">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
+        <p><small>This line of text is meant to be treated as fine print.</small></p>
+        <p>The following snippet of text is <strong>rendered as bold text</strong>.</p>
+        <p>The following snippet of text is <em>rendered as italicized text</em>.</p>
+        <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
+      </div>
+
+    </div>
+    <div class="col-sm-4">
+      <div class="bs-component">
+        <h2>Emphasis classes</h2>
+        <p class="text-muted">Fusce dapibus, tellus ac cursus commodo, tortor mauris nibh.</p>
+        <p class="text-primary">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+        <p class="text-warning">Etiam porta sem malesuada magna mollis euismod.</p>
+        <p class="text-danger">Donec ullamcorper nulla non metus auctor fringilla.</p>
+        <p class="text-success">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+        <p class="text-info">Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Blockquotes -->
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h2 id="type-blockquotes">Blockquotes</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="bs-component">
+        <blockquote>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+          <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+        </blockquote>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="bs-component">
+        <blockquote class="pull-right">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+          <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</div>

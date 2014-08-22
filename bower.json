@@ -1,0 +1,20 @@
+{
+  "name": "mean",
+  "version": "0.4.0",
+  "dependencies": {
+    "jquery": "1.x",
+    "angular": "latest",
+    "angular-resource": "latest",
+    "angular-cookies": "latest",
+    "angular-mocks": "latest",
+    "angular-route": "latest",
+    "bootstrap": "3.1.1",
+    "bootswatch": "*",
+    "angular-bootstrap": "0.11.0",
+    "angular-ui-router": "#master",
+    "macgyver-core": "*"
+  },
+  "resolutions": {
+    "bootstrap": "~3.2.0"
+  }
+}

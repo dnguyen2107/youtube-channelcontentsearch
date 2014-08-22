@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+{% include '../includes/head.html' %}
+
+<body>
+  {% if (req.user.isAdmin()) %}
+    <div class="navbar navbar-default navbar-fixed-top" data-ng-include="'/system/views/header.html'" data-role="navigation"></div>
+  {% endif %}
+
+  <div class="container">
+    {% block content %}{% endblock %}
+  </div>
+  <!-- <div class="footer">
+    <div class="container">
+      <a href="#">YouTube</a>
+    </div>
+  </div> -->
+
+  {% include '../includes/foot.html' %}
+</body>
+
+</html>

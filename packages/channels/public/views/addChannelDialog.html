@@ -1,0 +1,44 @@
+<div id="AddChannelsWrap">
+	<div class="modal-header">
+		<button type="button" class="close reset" data-ng-click="closeDialog()" aria-hidden="true">&times;</button>
+		<h3 class="modal-title" id="myModalLabel">Add Channel</h3>
+	</div>
+	<div class="modal-body">
+		<div class="container-fluid">
+			<div class="row">
+				<form class="form-horizontal" data-ng-submit="searchChannel(channelName)">
+					<div class="col-xs-10">
+						<div class="form-group">
+							<input id="AddChannelName" class="form-control" type="text" data-ng-focus="true" data-ng-model="channelName" placeholder="Channel Name or Channel ID">
+						</div>
+					</div>
+					<div class="col-xs-2">
+						<button type="submit" class="btn btn-success btn-sm" data-ng-disabled="!channelName">Search</button>
+					</div>
+				</form>
+			</div>
+
+			<div class="row text-center" data-ng-if="loading">
+				<mac-spinner></mac-spinner>
+			</div>
+			<div class="row" data-ng-if="!loading && result">
+				<div class="col-xs-2">
+					<img data-ng-src="{{result.entry.media$thumbnail.url}}" style="width:100%"/>
+				</div>
+				<div class="col-xs-10">
+					<h4><a data-ng-href="https://www.youtube.com/channel/{{result.entry.channelId}}" target="blank">{{result.entry.title.$t}}</a></h4>
+					<p class="text-muted small">Published: {{result.entry.published.$t | date}}</p>
+				</div>
+			</div>
+			<div class="row" data-ng-if="noresult">
+				<span>No channel found</span>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<span class="text-danger" style="padding-right:20px" data-ng-if="addError">{{addError}}</span>
+		<span class="text-success" style="padding-right:20px" data-ng-if="addSuccess">Success</span>
+		<span class="text-success" style="padding-right:20px" data-ng-if="addLoading"><mac-spinner></mac-spinner></span>
+		<button type="button" class="btn btn-default btn-sm" data-ng-disabled="!result" data-ng-click="addChannel()">Add</button>
+	</div>
+</div>

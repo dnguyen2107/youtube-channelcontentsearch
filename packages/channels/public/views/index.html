@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-sm-12" style="margin-bottom: 20px">
+    <h1 id="type">Manage Channels <a class="btn btn-default btn-sm" data-ng-click="openAddChannelForm()">Add Channel</a> <a class="btn btn-default btn-sm" data-ng-click="fetchVideos()">Fetch Videos</a></h1>
+  </div>
+
+  <div class="col-sm-12">
+    <div class="table-responsive" data-ng-if="channels.length">
+        <table class="table table-striped">
+          <tbody>
+            <tr data-ng-repeat="channel in channels">
+                <td><img data-ng-src="{{channel.snippet.thumbnail}}" width="20"/></td>
+                <td><a data-ng-href="https://www.youtube.com/channel/{{channel._id}}" target="blank">{{channel.snippet.title}}</a></td>
+                <td>{{channel._id}}</td>
+                <td>{{channel.statistics.videoCount | number}} video(s)</td>
+                <td>{{channel.status}} - <em class="text-muted">{{channel.lastRun | date:'MMM dd - HH:mm:ss'}}</em></td>
+                <td><span class="pull-right"><a href="#" data-ng-click="fetchChannelVideos(channel)">Fetch</a>&nbsp;<a href="#" data-ng-click="removeChannel(channel)">Remove</a></td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+
+    <div data-ng-if="!channels.length">
+      <p class="lead">No channel</p>
+    </div>
+  </div>
+
+
+  <!-- <form role="form" data-ng-controller="SearchChannelFormCtrl" name="SearchChannelForm" data-ng-submit="">
+      <div class="form-group">
+          <label for="channel">Channel</label>
+          <input type="text" class="form-control" id="channel" placeholder="Channel Name or Channel ID" data-ng-model="channelQuery">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+  </form> -->
+</div>

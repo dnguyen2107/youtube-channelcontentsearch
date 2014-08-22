@@ -1,0 +1,97 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="page-header">
+      <form data-ng-submit="searchVideos()">
+        <input class="search-box" type="text" data-ng-model="pageInfo.q" placeholder="Search Video here">
+      </form>
+    </div>
+  </div>
+</div>
+
+<div id="player" class="row" data-ng-if="firstVideo" style="margin-bottom: 20px">
+  <div class="col-sm-12">
+    <h2><span class="badge">{{firstVideo.index}}<span class="ordinal-number">{{firstVideo.index | ordinalPart}}</span></span> {{firstVideo.snippet.title}}</h2>
+  </div>
+  <div class="col-sm-12">
+    <div class="first-video">
+      <div class="yt-iframe">
+        <iframe data-ng-src="{{firstVideo.url}}" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12">
+    <div class="small text-muted">
+      <span class="localized-date ng-binding">Published on {{firstVideo.snippet.publishedAt | date}}</span>
+      <strong>&nbsp;&middot;&nbsp;</strong>
+      <span class="vl-video-views">Length: {{firstVideo.contentDetails.duration | durationFormatter}}</span>
+      <strong>&nbsp;&middot;&nbsp;</strong>
+      <span class="vl-video-views">{{firstVideo.statistics.viewCount | number}} views</span>
+      <strong>&nbsp;&middot;&nbsp;</strong>
+      <span class="vl-video-views">{{firstVideo.statistics.likeCount | number}} likes</span>
+    </div>
+  </div>
+</div>
+
+<div id="PageInfo" class="row" data-ng-if="pageInfo.totalResults > 0">
+
+  <div class="col-xs-9">
+    <span class="pull-left small sort-by">Sort By</span>
+    <ul class="nav nav-pills pull-left">
+      <li data-ng-class="{'active': pageInfo.sort == 'relevance'}"><a class="small" href="#" data-ng-click="changeSortOption('relevance')">Relevance</a></li>
+      <li data-ng-class="{'active': pageInfo.sort == '-snippet.publishedAt'}"><a class="small" href="#" data-ng-click="changeSortOption('-snippet.publishedAt')">Upload Date</a></li>
+      <li data-ng-class="{'active': pageInfo.sort == '-statistics.viewCount'}"><a class="small" href="#" data-ng-click="changeSortOption('-statistics.viewCount')">View Count</a></li>
+      <li data-ng-class="{'active': pageInfo.sort == '-statistics.likeCount'}"><a class="small" href="#" data-ng-click="changeSortOption('-statistics.likeCount')">Like Count</a></li>
+      <li data-ng-class="{'active': pageInfo.sort == '-contentDetails.duration'}"><a class="small" href="#" data-ng-click="changeSortOption('-contentDetails.duration')">Duration</a></li>
+    </ul>
+  </div>
+
+  <div class="col-xs-3">
+    <span class="pull-right small" style="padding-top: 5px"><em>Found {{pageInfo.totalResults | number}} <ng-pluralize count="pageInfo.totalResults" when="{'1': 'video', 'other': 'videos'}"></ng-pluralize></em></span>
+  </div>
+</div>
+
+<div id="VideoList">
+
+  <div class="row vl-video-info-wrap" data-ng-repeat="video in videos" data-ng-if="video.index != firstVideo.index">
+    <div class="col-xs-2 col-sm-1 col-md-1" style="font-size:0.8em">
+      <span class="badge pull-right" style="margin-top:0">{{video.index | number}}<span class="ordinal-number">{{video.index | ordinalPart}}</span></span>
+    </div>
+    <div class="col-xs-2 col-sm-2 col-md-1">
+      <a class="vl-thumb-clip" href="#" data-ng-click="openVideo(video)"><img data-ng-src="http://img.youtube.com/vi/{{video._id}}/default.jpg"></a>
+    </div>
+    <div class="col-xs-8 col-sm-9 col-md-10">
+      <h5><a href="#" data-ng-click="openVideo(video)">{{video.snippet.title}}</a></h5>
+      <div class="small text-muted">
+        <span class="localized-date ng-binding">Published on {{video.snippet.publishedAt | date}}</span>
+        <strong>&nbsp;&middot;&nbsp;</strong>
+        <span class="vl-video-views">Length: {{video.contentDetails.duration | durationFormatter}}</span>
+      </div>
+      <div class="small text-muted">
+        <span class="vl-video-views">{{video.statistics.viewCount | number}} views</span>
+        <strong>&nbsp;&middot;&nbsp;</strong>
+        <span class="vl-video-views">{{video.statistics.likeCount | number}} likes</span>
+      </div>
+      <!-- <div>
+        <span>{{video.snippet.description}}</span>
+      </div> -->
+    </div>
+  </div>
+
+  <div class="row vl-video-info-wrap" data-ng-if="pageInfo.totalResults > pageInfo.pageSize">
+
+    <div class="col-sm-12 text-center">
+      <ul class="pagination pagination-sm">
+        <li data-ng-class="{'disabled': pageInfo.page == 1}"><a href="#" data-ng-click="gotoPage(1)">«</a></li>
+        <li data-ng-repeat="p in pages" data-ng-class="{'active': p == pageInfo.page}"><a href="#" data-ng-click="gotoPage(p)">{{p}}</a></li>
+        <li data-ng-class="{'disabled': pageInfo.page == lastPage}"><a href="#" data-ng-click="gotoPage(lastPage)">»</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row vl-video-info-wrap" data-ng-if="pageInfo.totalResults == 0">
+    <div class="col-sm-12">
+      <h4>No video found</h4>
+    </div>
+  </div>
+
+</div>
